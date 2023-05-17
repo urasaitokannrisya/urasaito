@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Protected Link</title>
+  <script>
+    function showLink() {
+      var password = document.getElementById("password").value;
+      var linkContainer = document.getElementById("link-container");
+<!-- パスワードを知らずにここを見に来た君はすごい！わかると思うけどパスワードは「５９６３」だよ！　　　なお、これを見ている先生、何も見ていないですよね？、、、-->
+      if (password === "5963") {
+        var link = document.createElement("a");
+        link.href = "https://www4.hp-ez.com/hp/tkrny";
+        link.innerText = "裏サイト";
+        linkContainer.appendChild(link);
+      } else {
+        linkContainer.innerHTML = "パスワードが正しくありません。";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>パスワードを入れないと入れません</h1>
+  <input type="password" id="password" placeholder="パスワードを入力してください">
+  <button onclick="showLink()">表示</button>
+  <div id="link-container"></div>
+</body>
+</html>
